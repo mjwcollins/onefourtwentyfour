@@ -1,0 +1,119 @@
+*, *::after, *::before {
+    box-sizing: border-box; /*everytime you set the width of the element you're only setting the width of the content, no border or padding*/
+}
+
+body {
+    height: 97vh; /*viewport height, better than using a %*/
+    /* background: rgba(225, 15, 30, .92);  */
+    /* background-image: "https://i.imgur.com/WpeArtS.jpg"; */
+    color: #eee;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: none; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background
+    border: 5px;
+    border-color: red;
+    position: relative;
+}
+
+section div {
+    border: 5px solid #eee;
+    color: #eee; 
+}
+
+div {
+    border: none;
+}
+
+section {
+    border: none;
+}
+
+h1 {
+    font-family: 'Rajdhani', sans-serif;
+    text-shadow: red 2px 5px;
+    font-size: 50px;
+    color: rgb(244, 201, 92);
+    margin-top: 100px; 
+}
+
+.p1 {
+    border: 5px solid #eee;
+    
+}
+
+.p2 {
+    border: 5px solid #eee;
+    
+}
+
+.playerOne {
+    display: grid;
+    grid-template-columns: repeat(2, 10vmin);
+    grid-template-rows: repeat(3, 10vmin);
+    grid-gap: 2vmin;
+    margin: 0 auto;
+    /* color: #eee; */
+    align-content: left;
+    float: left;
+    position: left;
+    flex-direction: row;
+    position: relative;
+    right: 200px;
+    border: none;
+    margin-top: 40%;
+}
+
+.playerTwo {
+    display: grid;
+    grid-template-columns: repeat(2, 10vmin);
+    grid-template-rows: repeat(3, 10vmin);
+    grid-gap: 2vmin;
+    margin: 0 auto;
+    /* color: #eee; */
+    align-content: right;
+    float: right;
+    position: right;
+    flex-direction: row;
+    position: relative;
+    left: 200px;
+    border: none;
+    margin-top: 40%;
+}
+
+.inPlay {
+    display: inline-grid;
+    grid-template-columns: repeat(1, 10vmin);
+    grid-template-rows: repeat(6, 10vmin);
+    grid-gap: 2vmin;
+    margin: auto;
+    color: #eee;
+    /* position: center; */
+    flex-direction: column;
+    position: relative;
+    margin-top: 0%;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 35, 45, .87);
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    position: static;
+  }
+  
+  button:hover {
+    background-color: white;
+    color: grey;
+  }
