@@ -1,47 +1,55 @@
 /*----- constants -----*/ 
 // make an array of objects
 
-const dice = [
-    {
-        name: 'one',
-        img: '';
-        points 1
-    }
-]
+// const dice = [
+//     {
+//         name: 'one',
+//         img: '';
+//         points 1
+//     }
+// ]
 
 //array.find
 
 //const foundDie = dice.find(die) => {
-    return dice.points === diceIdx
-}
-const diceIdx = Math.floor(Math.random() * 6) + 1
+//     return dice.points === diceIdx
+// }
+const diceIdx = Math.floor(Math.random() * 6) + 1;
 
-const dice = {
-    one: {
+const dice = [
+    {
+        name: 'one',
         img: 'https://i.imgur.com/U8Aweq3.jpg',
         points: 1
     },
-    two: {
+    {
+        name: 'two',
         img: 'https://i.imgur.com/3Sl88UA.jpg',
         points: 2
     },
-    three: {
+    {
+        name: 'three',
         img: 'https://i.imgur.com/C8WATr2.jpg',
         points: 3
     },
-    four: {
+    {
+        name: 'four',
         img: 'https://i.imgur.com/GF6f5l3.jpg',
         points: 4
     },
-    five: {
+    {
+        name: 'five',
         img: 'https://i.imgur.com/IFvJmjc.jpg',
         points: 5
     },
-    six: {
-        img: 'https://i.imgur.com/umF86qj.jpg',
+    {
+        name: 'six',
+        mg: 'https://i.imgur.com/umF86qj.jpg',
         points: 6
     }
-};
+];
+
+console.log(diceIdx);
 
 /*----- app's state (variables) -----*/ 
 var results, scores, winner, lScore = 0, rScore = 0, tieScore = 0;
@@ -52,7 +60,7 @@ const rScoreEl = document.querySelector('#right > h1');
 const tieScoreEl = document.querySelector('#tie > h1');
 
 /*----- event listeners -----*/ 
-document.getElementById('section').addEventListener('click', handleClick);
+// document.getElementById('section').addEventListener('click', handleClick);
 
 /*----- functions -----*/
 init();
@@ -66,17 +74,17 @@ function handleClick() {
 }
 
 function getWinner() {
-    return resultsp[l] === results.r ?
+    return results[l] === results.r ?
     't'
     : 
     dice[results.l].points > dice[results.r] ? 'l' : 'r';
 }
 
 
-function getRandomNums() {
-    return dice.Math.floor(Math.random() * 6) + 1;
-}
-console.log(randomNum);
+// function getRandomNums() {
+//     return dice.Math.floor(Math.random() * 6) + 1;
+// }
+// console.log(getRandomNums());
 
 function render() {
     // render scores
