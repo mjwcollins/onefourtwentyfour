@@ -5,7 +5,8 @@
 body {
     height: 97vh; /*viewport height, better than using a %*/
     /* background: rgba(225, 15, 30, .92);  */
-    /* background-image: "https://i.imgur.com/WpeArtS.jpg"; */
+    background: rgba(180, 180, 180, .8)
+    background-image: "https://i.imgur.com/WpeArtS.jpg";
     color: #eee;
     margin: 0;
     display: flex;
@@ -18,6 +19,12 @@ body {
     background
     border: 5px;
     border-color: red;
+    position: relative;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
     position: relative;
 }
 
@@ -34,25 +41,42 @@ section {
     border: none;
 }
 
-h1 {
+header {
     font-family: 'Rajdhani', sans-serif;
     text-shadow: red 2px 5px;
     font-size: 50px;
     color: rgb(244, 201, 92);
-    margin-top: 100px; 
+    /* margin-top: 100px;  */
+    padding-top: 30px;
 }
 
-.p1 {
+footer {
+    display: flex;
+    align-content: center;
+}
+
+/* #scoreL {
+    display: flex;
+    padding-right: 100px;
+}
+
+#scoreR {
+    display: flex;
+    padding-left: 100px;
+} */
+
+
+.left {
     border: 5px solid #eee;
     
 }
 
-.p2 {
+.right {
     border: 5px solid #eee;
     
 }
 
-.playerOne {
+#left {
     display: grid;
     grid-template-columns: repeat(2, 10vmin);
     grid-template-rows: repeat(3, 10vmin);
@@ -69,7 +93,7 @@ h1 {
     margin-top: 40%;
 }
 
-.playerTwo {
+#right {
     display: grid;
     grid-template-columns: repeat(2, 10vmin);
     grid-template-rows: repeat(3, 10vmin);
@@ -86,7 +110,7 @@ h1 {
     margin-top: 40%;
 }
 
-.inPlay {
+#inPlay {
     display: inline-grid;
     grid-template-columns: repeat(1, 10vmin);
     grid-template-rows: repeat(6, 10vmin);
