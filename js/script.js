@@ -44,12 +44,14 @@ const dice = [
     },
     {
         name: 'six',
-        mg: 'https://i.imgur.com/umF86qj.jpg',
+        img: 'https://i.imgur.com/umF86qj.jpg',
         points: 6
     }
 ];
 
 console.log(diceIdx);
+
+//use if else to get images to display
 
 /*----- app's state (variables) -----*/ 
 var results, scores, winner, lScore = 0, rScore = 0, tieScore = 0;
