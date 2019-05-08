@@ -3,23 +3,28 @@
 }
 
 body {
-    height: 97vh; /*viewport height, better than using a %*/
+    height: 100vh; /*viewport height, better than using a %*/
     /* background: rgba(225, 15, 30, .92);  */
-    background: rgba(180, 180, 180, .8)
-    background-image: url("https://i.imgur.com/WpeArtS.jpg");
-    color: #eee;
+    background-color: rgba(211, 66, 66, 0.9);
+    /* background-image: url("https://i.imgur.com/WpeArtS.jpg"); */
+    /* color: #eee; */
     margin: 0;
-    display: flex;
+display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* border: none; */
     background-repeat: no-repeat;
     background-size: cover;
-    background
+    /* background */
     border: 5px;
-    border-color: red;
+    /* border-color: red; */
     position: relative;
+}
+
+main {
+    background-color: rgba(108, 228, 210, 0.8);
+    border-radius: 10%;
 }
 
 h1 {
@@ -30,7 +35,7 @@ h1 {
 
 section div {
     border: 5px solid #eee;
-    color: #eee; 
+    /* color: #eee;  */
 }
 
 div {
@@ -42,10 +47,10 @@ section {
 }
 
 header {
-    font-family: 'Rajdhani', sans-serif;
-    text-shadow: red 2px 5px;
+    font-family: 'Londrina Sketch', cursive;
+    text-shadow:  rgba(108, 228, 210, 0.8) 2px 5px;
     font-size: 50px;
-    color: rgb(244, 201, 92);
+    color: rgba(255, 255, 255, 0.8);
     /* margin-top: 100px;  */
     padding-top: 30px;
 }
@@ -116,7 +121,7 @@ footer {
     grid-template-rows: repeat(6, 10vmin);
     grid-gap: 2vmin;
     margin: auto;
-    color: #eee;
+    /* color: #eee; */
     /* position: center; */
     flex-direction: column;
     position: relative;
@@ -130,39 +135,47 @@ button {
     margin-top: 10px;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: rgba(255, 35, 45, .87);
+    background-color: rgba(108, 228, 210, 0.8);
     color: white;
     border-radius: 5px;
     font-size: 20px;
     position: static;
   }
   
-  button:hover {
+button:hover {
     background-color: white;
-    color: grey;
+    color: rgba(110, 75, 255, .8);
   }
 
-  .one-die {
+.one-die {
       background: url("https://i.imgur.com/U8Aweq3.jpg") no-repeat; 
       /* background-position: center; */
       /* background-size: 78.8px 78.8px; */
       background-size: contain;
   }
 
-  /* .two-die {
-      
-  }
-  .three-die {
-
-  }*/
-  .four-die {
+.two-die {
     background: url("https://i.imgur.com/GF6f5l3.jpg") no-repeat;
     background-size: contain;
-  }
-  /*}
-  .2 {
+    
+}
+.three-die {
+    background: url("https://i.imgur.com/GF6f5l3.jpg") no-repeat;
+    background-size: contain;
+    
+}
+.four-die {
+    background: url("https://i.imgur.com/GF6f5l3.jpg") no-repeat;
+    background-size: contain;
+}
 
+.five-die {
+    background: url("https://i.imgur.com/GF6f5l3.jpg") no-repeat;
+    background-size: contain;
+    
+}
+.six-die {
+    background: url("https://i.imgur.com/GF6f5l3.jpg") no-repeat;
+    background-size: contain;
+    
   }
-  .2 {
-
-  } */
