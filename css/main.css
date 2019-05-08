@@ -9,7 +9,7 @@ body {
     /* background-image: url("https://i.imgur.com/WpeArtS.jpg"); */
     /* color: #eee; */
     margin: 0;
-display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -47,7 +47,7 @@ section {
 }
 
 header {
-    font-family: 'Londrina Sketch', cursive;
+    font-family: 'Cabin Sketch', cursive;
     text-shadow:  rgba(108, 228, 210, 0.8) 2px 5px;
     font-size: 50px;
     color: rgba(255, 255, 255, 0.8);
@@ -140,11 +140,13 @@ button {
     border-radius: 5px;
     font-size: 20px;
     position: static;
+    font-family: 'Cabin Sketch', cursive;
   }
   
 button:hover {
-    background-color: white;
-    color: rgba(110, 75, 255, .8);
+    background-color:  rgba(190, 25, 255, .8);
+    color: white;
+    font-family: 'Cabin Sketch', cursive;
   }
 
 .one-die {
