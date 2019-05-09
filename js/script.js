@@ -22,38 +22,38 @@
 const diceIdx = Math.floor(Math.random() * 6) + 1;
 
 // array of objects treat as objects
-const dice = [
-    {
-        name: 'one',
-        img: 'https://i.imgur.com/U8Aweq3.jpg',
-        points: 1
-    },
-    {
-        name: 'two',
-        img: 'https://i.imgur.com/3Sl88UA.jpg',
-        points: 2
-    },
-    {
-        name: 'three',
-        img: 'https://i.imgur.com/C8WATr2.jpg',
-        points: 3
-    },
-    {
-        name: 'four',
-        img: 'https://i.imgur.com/GF6f5l3.jpg',
-        points: 4
-    },
-    {
-        name: 'five',
-        img: 'https://i.imgur.com/IFvJmjc.jpg',
-        points: 5
-    },
-    {
-        name: 'six',
-        img: 'https://i.imgur.com/umF86qj.jpg',
-        points: 6
-    }
-];
+// const dice = [
+//     {
+//         name: 'one',
+//         img: 'https://i.imgur.com/U8Aweq3.jpg',
+//         points: 1
+//     },
+//     {
+//         name: 'two',
+//         img: 'https://i.imgur.com/3Sl88UA.jpg',
+//         points: 2
+//     },
+//     {
+//         name: 'three',
+//         img: 'https://i.imgur.com/C8WATr2.jpg',
+//         points: 3
+//     },
+//     {
+//         name: 'four',
+//         img: 'https://i.imgur.com/GF6f5l3.jpg',
+//         points: 4
+//     },
+//     {
+//         name: 'five',
+//         img: 'https://i.imgur.com/IFvJmjc.jpg',
+//         points: 5
+//     },
+//     {
+//         name: 'six',
+//         img: 'https://i.imgur.com/umF86qj.jpg',
+//         points: 6
+//     }
+// ];
 
 // console.log(diceIdx);
 
@@ -105,7 +105,7 @@ uniqueRandomArray = () => {
 
 generateRandomNumber = () => {
     
-    return Math.floor((Math.random() * 6))
+    return Math.floor((Math.random() * 6) + 1)
 }
 // console.log(uniqueRandomArray());
 // console.log(uniqueRandomArray());
@@ -118,24 +118,50 @@ $(function () {
         random_array2 = generateRandomNumber()
         random_array3 = generateRandomNumber()
         random_array4 = generateRandomNumber()
-        random_array4 = generateRandomNumber()
         random_array5 = generateRandomNumber()
+        random_array6 = generateRandomNumber()
 
         $('#inPlayOne').attr('src', imagesSrcs[random_array1]);
+        $('#inPlayOne').parent().attr('data-index', random_array1 + 1);
+
         $('#inPlayTwo').attr('src', imagesSrcs[random_array2]);
+        $('#inPlayTwo').parent().attr('data-index', random_array2 + 1);
+
         $('#inPlayThree').attr('src', imagesSrcs[random_array3]);
+        $('#inPlayThree').parent().attr('data-index', random_array3 + 1);
+
         $('#inPlayFour').attr('src', imagesSrcs[random_array4]);
-        $('#inPlayFive').attr('src', imagesSrcs[random_array4]);
-        $('#inPlaySix').attr('src', imagesSrcs[random_array5]);
+        $('#inPlayFour').parent().attr('data-index', random_array4 + 1);
+
+        $('#inPlayFive').attr('src', imagesSrcs[random_array5]);
+        $('#inPlayFive').parent().attr('data-index', random_array5 + 1);
+
+        $('#inPlaySix').attr('src', imagesSrcs[random_array6]);
+        $('#inPlaySix').parent().attr('data-index', random_array6 + 1);
 
     //    append all of the above jquery elements to the appropriate parent
     });
 });
 
-// var generateRandomNumber1 = generateRandomNumber[0].clone();
+// var generateRandomNumber1 = generateRandomNumber[0].clone(); 
 
 console.log(generateRandomNumber());
 
+
+function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+  
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getEleme
+        |ntById(data));
+  }
 
 
 
@@ -198,4 +224,4 @@ console.log(generateRandomNumber());
 
 // $(function () {
 
-// })
+// }
