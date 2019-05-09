@@ -159,8 +159,7 @@ function allowDrop(ev) {
   function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getEleme
-        |ntById(data));
+    ev.target.appendChild(document.getElementById(data));
   }
 
 
