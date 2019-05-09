@@ -67,7 +67,7 @@ const diceIdx = Math.floor(Math.random() * 6) + 1;
 
 /*----- app's state (variables) -----*/
 // var results, scores, winner, lScore = 0, rScore = 0, tieScore = 0;
-var images = [$('#inPlayOne'), $('#inPlayTwo'), $('#inPlayThree'), $('#inPlayFour'), $('#inPlayFive'), $('#inPlaySix')];
+var images = [$('#inPlay1'), $('#inPlay2'), $('#inPlay3'), $('#inPlay4'), $('#inPlay5'), $('#inPlay6')];
 
 var imagesSrcs = ['https://i.imgur.com/U8Aweq3.jpg', 'https://i.imgur.com/3Sl88UA.jpg', 'https://i.imgur.com/C8WATr2.jpg', 'https://i.imgur.com/GF6f5l3.jpg', 'https://i.imgur.com/IFvJmjc.jpg', 'https://i.imgur.com/umF86qj.jpg',]
 
@@ -107,7 +107,7 @@ uniqueRandomArray = () => {
 
 generateRandomNumber = () => {
     
-    return Math.floor((Math.random() * 6) + 1)
+    return Math.floor((Math.random() * 6))
 }
 // console.log(uniqueRandomArray());
 // console.log(uniqueRandomArray());
@@ -123,23 +123,23 @@ $(function () {
         random_array5 = generateRandomNumber()
         random_array6 = generateRandomNumber()
 
-        $('#inPlay #inPlayOne').attr('src', imagesSrcs[random_array1]);
-        $('#inPlay #inPlayOne').parent().attr('data-index', random_array1 + 1);
+        $('#inPlay #inPlay1').attr('src', imagesSrcs[random_array1]);
+        $('#inPlay #inPlay1').attr('data-index', random_array1 + 1);
 
-        $('#inPlay #inPlayTwo').attr('src', imagesSrcs[random_array2]);
-        $('#inPlay #inPlayTwo').parent().attr('data-index', random_array2 + 1);
+        $('#inPlay #inPlay2').attr('src', imagesSrcs[random_array2]);
+        $('#inPlay #inPlay2').attr('data-index', random_array2 + 1);
 
-        $('#inPlay #inPlayThree').attr('src', imagesSrcs[random_array3]);
-        $('#inPlay #inPlayThree').parent().attr('data-index', random_array3 + 1);
+        $('#inPlay #inPlay3').attr('src', imagesSrcs[random_array3]);
+        $('#inPlay #inPlay3').attr('data-index', random_array3 + 1);
 
-        $('#inPlay #inPlayFour').attr('src', imagesSrcs[random_array4]);
-        $('#inPlay #inPlayFour').parent().attr('data-index', random_array4 + 1);
+        $('#inPlay #inPlay4').attr('src', imagesSrcs[random_array4]);
+        $('#inPlay #inPlay4').attr('data-index', random_array4 + 1);
 
-        $('#inPlay #inPlayFive').attr('src', imagesSrcs[random_array5]);
-        $('#inPlay #inPlayFive').parent().attr('data-index', random_array5 + 1);
+        $('#inPlay #inPlay5').attr('src', imagesSrcs[random_array5]);
+        $('#inPlay #inPlay5').attr('data-index', random_array5 + 1);
 
-        $('#inPlay #inPlaySix').attr('src', imagesSrcs[random_array6]);
-        $('#inPlay #inPlaySix').parent().attr('data-index', random_array6 + 1);
+        $('#inPlay #inPlay6').attr('src', imagesSrcs[random_array6]);
+        $('#inPlay #inPlay6').attr('data-index', random_array6 + 1);
 
     //    append all of the above jquery elements to the appropriate parent
     });
@@ -187,20 +187,21 @@ function drop(ev) {
             
             var emptyDivs = document.querySelectorAll('#inPlay div:empty');
             console.log(emptyDivs)
-            const idNames = [
-                'inPlayOne',
-                'inPlayTwo',
-                'inPlayThree',
-                'inPlayFour',
-                'inPlayFive',
-                'inPlaySix',
-            ]
+            // const idNames = [
+            //     'inPlayOne',
+            //     'inPlayTwo',
+            //     'inPlayThree',
+            //     'inPlayFour',
+            //     'inPlayFive',
+            //     'inPlaySix',
+            // ]
         if (emptyDivs.length === 6) {
         for (let i = 0; i < emptyDivs.length; i++) {
             // var replacementDie = document.createElement(`<div id="x1" draggable="true" ondragstart="drag(event)"><img id="#${ i }" src="pictures/dice/1.jpg" width="100%" height="100%"></div>`);
             // var replacementDie = document.createElement(`<img id="#${ i }" src="pictures/dice/1.jpg" width="100%" height="100%" />`);
             var replacementDie = document.createElement('img')
-            replacementDie.setAttribute('id', `${ idNames[i] }` )
+            replacementDie.setAttribute('id', `inPlay${ i + 1 }`)
+            replacementDie.setAttribute('data-index', 1)
             replacementDie.setAttribute('src', "pictures/dice/1.jpg")
             replacementDie.setAttribute('width', "100%")
             replacementDie.setAttribute('height', "100%")
@@ -214,7 +215,7 @@ function drop(ev) {
     
         
         
-        document.querySelectorAll('#inPlay div:empty').appendChild(replacementDie);
+        // document.querySelectorAll('#inPlay div:empty').appendChild(replacementDie);
 
 
 
