@@ -1,99 +1,28 @@
 /*----- constants -----*/
-// make an array of objects
 
-// const dice = [
-//     {
-//         name: 'one',
-//         img: '';
-//         points 1
-//     }
-// ]
-
-//array.find
-
-//const foundDie = dice.find(die) => {
-//     return dice.points === diceIdx
-// }
-
-// make a variable for hand 
 
 // diceIdx is my random number!!!
 
 const diceIdx = Math.floor(Math.random() * 6) + 1;
 
-// array of objects treat as objects
-// const dice = [
-//     {
-//         name: 'one',
-//         img: 'https://i.imgur.com/U8Aweq3.jpg',
-//         points: 1
-//     },
-//     {
-//         name: 'two',
-//         img: 'https://i.imgur.com/3Sl88UA.jpg',
-//         points: 2
-//     },
-//     {
-//         name: 'three',
-//         img: 'https://i.imgur.com/C8WATr2.jpg',
-//         points: 3
-//     },
-//     {
-//         name: 'four',
-//         img: 'https://i.imgur.com/GF6f5l3.jpg',
-//         points: 4
-//     },
-//     {
-//         name: 'five',
-//         img: 'https://i.imgur.com/IFvJmjc.jpg',
-//         points: 5
-//     },
-//     {
-//         name: 'six',
-//         img: 'https://i.imgur.com/umF86qj.jpg',
-//         points: 6
-//     }
-// ];
-
-// console.log(diceIdx);
-
-// if (diceIdx == 1) {
-//     #leftOne === dice.diceIdx[0]
-
-// }
-
-//use if else to get images to display
 
 
 /*----- app's state (variables) -----*/
-// var results, scores, winner, lScore = 0, rScore = 0, tieScore = 0;
+
 var images = [$('#inPlay1'), $('#inPlay2'), $('#inPlay3'), $('#inPlay4'), $('#inPlay5'), $('#inPlay6')];
 
 var imagesSrcs = ['https://i.imgur.com/U8Aweq3.jpg', 'https://i.imgur.com/3Sl88UA.jpg', 'https://i.imgur.com/C8WATr2.jpg', 'https://i.imgur.com/GF6f5l3.jpg', 'https://i.imgur.com/IFvJmjc.jpg', 'https://i.imgur.com/umF86qj.jpg',]
 
-// https://i.imgur.com/U8Aweq3.jpg - 1
+
 /*----- cached element references -----*/
 // const lScoreEl = document.querySelector('#left');
 // const rScoreEl = document.querySelector('#right');
 // const tieScoreEl = document.querySelector('#tie');
 
 /*----- event listeners -----*/
-// document.getElementById('roll').addEventListener('click', handleClick);
+
 
 /*----- functions -----*/
-// generates random number and button click
-
-// generates random number and button click
-
-// uniqueRandomArray = () => {
-//     //debugger
-
-//     var arr = [];
-//     while (arr.length < 6) {
-//         var r = generateRandomNumber();
-//         if (arr.indexOf(r) === -1) arr.push(r);
-//     }
-//     return arr
 
 uniqueRandomArray = () => {
     var arr = []
@@ -109,9 +38,7 @@ generateRandomNumber = () => {
     
     return Math.floor((Math.random() * 6))
 }
-// console.log(uniqueRandomArray());
-// console.log(uniqueRandomArray());
-// console.log(uniqueRandomArray());
+
 $(function () {
     $("#roll").click(function (evt) {
         console.log(uniqueRandomArray())
@@ -145,7 +72,8 @@ $(function () {
     });
 });
 
-// var generateRandomNumber1 = generateRandomNumber[0].clone(); 
+
+
 
 console.log(generateRandomNumber());
 
@@ -175,9 +103,7 @@ function drop(ev) {
 
 
 
-// repopulate the empty inPlay array
-        // create new element
-            // var replacementDie = document.createElement(`<div id="x1" draggable="true" ondragstart="drag(event)"><img id="#${ data }" src="pictures/dice/1.jpg" width="100%" height="100%"></div>`);
+
         
         // find the empty inPlay slot
        var emptyDivs = document.querySelectorAll('#inPlay div:empty');
@@ -187,92 +113,33 @@ function drop(ev) {
             
             var emptyDivs = document.querySelectorAll('#inPlay div:empty');
             console.log(emptyDivs)
-            // const idNames = [
-            //     'inPlayOne',
-            //     'inPlayTwo',
-            //     'inPlayThree',
-            //     'inPlayFour',
-            //     'inPlayFive',
-            //     'inPlaySix',
-            // ]
+         
         if (emptyDivs.length === 6) {
         for (let i = 0; i < emptyDivs.length; i++) {
-            // var replacementDie = document.createElement(`<div id="x1" draggable="true" ondragstart="drag(event)"><img id="#${ i }" src="pictures/dice/1.jpg" width="100%" height="100%"></div>`);
-            // var replacementDie = document.createElement(`<img id="#${ i }" src="pictures/dice/1.jpg" width="100%" height="100%" />`);
             var replacementDie = document.createElement('img')
             replacementDie.setAttribute('id', `inPlay${ i + 1 }`)
             replacementDie.setAttribute('data-index', 1)
             replacementDie.setAttribute('src', "pictures/dice/1.jpg")
             replacementDie.setAttribute('width', "100%")
             replacementDie.setAttribute('height', "100%")
-            // , {id: `#${ i + 1 }`,  src: "pictures/dice/1.jpg",  width: "100%", height: "100%"});
+            
             console.log(replacementDie)
                 emptyDivs[i].appendChild(replacementDie);
             };
         }
     };
-            
     
-        
-        
-        // document.querySelectorAll('#inPlay div:empty').appendChild(replacementDie);
+    function init() {
+        refillDice()
+    };
+    $(function () {
+        $("#endTurn").click(function (evt) {
+           init();
+        });
+        });
 
-
-
-
-// init();
-
-// function handleClick() {
-//     results.l = getRandomNums();
-//     results.r = getRandomNums();
-//     winner = getWinner();
-//     scores[winner]++;
-//     render();
-// }
-
-// var columnExample = arraycolumn1[0].clone() 
-// $('h3').hmtmlColumnExample
-
-// function getWinner() {
-//     return results[l] === results.r ?
-//     't'
-//     : 
-//     dice[results.l].points > dice[results.r] ? 'l' : 'r';
-// }
-
-
-// // function getRandomNums() {
-// //     return dice.Math.floor(Math.random() * 6) + 1;
-// // }
-// // console.log(getRandomNums());
-
-// function render() {
-//     // render scores
-//     lScoreEl.textContent = scores.l;
-//     rScoreEl.textContent = scores.r;
-//     tieScoreEl.textContent = scores.t;
-//     // render results 
-//     // lResultEl.style.backgroundImage = `url(${rps[results.l].img})`;
-//     // rResultEl.style.backgroundImage = `url(${rps[results.r].img})`;
-
-// }
-
-// function init() {
-//     winner = null;
-//     results = {
-//         l: ''
-//     }
-// }
-
-
-
-
-
-// function handleClick(evt) {
-//     on.click()
-// }
-
-
-// $(function () {
-
-// }
+    $(function () {
+        $("#rules").click(function (evt) {
+            window.alert("Goal: With six dice, obtain a 1 and 4 and get the highest score possible with the other 4 dice, max score of 24. Play: Six dice and two or more players is required. Being the first player is a disadvantage so it is recommended that the starting player is determined by the lowest roll.  Player starts and continues clockwise. Player begins by rolling all six dice. After each roll the player is required to keep at least one die and re-roll the remaining. Once a dice is kept you can no longer roll it.  A turn ends when all dice have been held. A player must keep a 1 and a 4 or else they are disqualified.  The remaining four dice are totaled, the maximum score for a turn is 24. The winner is the player with the highest score.", "rules");
+        })
+    })
